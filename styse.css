@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+:root{
+    --main-font: "Montserrat", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    color:#080101;
+    font-family: var(--main-font);
+}
+
+.row{
+    display: flex;
+}
+.slide-content-item{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, #ef4b4b, #ed4b4b);
+    overflow: hidden;
+    display: none;
+}
+.slide-content-item.active{
+    display: flex;
+}
+.slide-content-item-left{
+    width: 50%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+.slide-content-item-left-text{
+    animation: textani 1s linear;
+}
+@keyframes textani {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.slide-content-item-right img{
+    animation: imgani 1s linear;
+
+}
+@keyframes imgani {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.slide-content-item-left-text h1{
+font-size: 40px;
+
+}
+.slide-content-item-left-text>p{
+    margin: 20px 0;
+    font-size: 20px;
+    color: azure;
+}
+.slide-content-item-left-text i{
+    color: rgb(249, 83, 86);
+}
+.slide-content-item-left-text button{
+    display: block;
+    height: 40px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 12px;
+    border: none;
+    background-color: rgb(252, 250, 248);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.slide-content-item-left-text button:hover{
+    background-color: darkred;
+}
+.ccc:hover{
+    color: aliceblue;
+}
+.slide-content-item-left-text button {
+    color: white;
+}
+.slide-content-item-left-text button i{
+    margin-left: 8px;
+}
+.slide-content-item-right{
+    width: 50%;
+    height: 100vh;
+}
+.slide-content-item-right img{
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content{
+    position: relative;
+    overflow: hidden;
+}
+.slide-content-pre-next{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+   /* padding: 0 12px;*/
+}
+.slide-content-pre-next i{
+    font-size: 30px;
+    cursor: pointer;
+    color: azure;
+}
+
+.slide-content-pre-next i:hover{
+    color:rgb(246, 4, 52);
+}
+
+.menu-toggle{
+    position: fixed;
+    top: 25px;
+    left: 20px;
+    font-size: 24px;
+    z-index: 2;
+    cursor: pointer;
+    transition: transfore 0.3s;
+    color: beige;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: aliceblue;
+    padding: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transfore 0.3s;
+    transform: translateX(-100%);
+}
+.menu_header{
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 1px solid #ccc;
+    color: black;
+}
+.meni_item{
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 8px;
+    transition: all 0.1s;
+    cursor: pointer;
+    color: black;
+}
+.meni_item:hover{
+    background-color: #ef4b4b;
+}
+.meni_item i{
+    text-align: center;
+    width: 20px;
+    font-size: 22px;
+}
+.meni_item span{
+font-weight: 500;
+margin-left: 20px;
+}
+#menu-toggle:checked~.menu{
+    transform: translateX(0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+#menu-toggle:checked~.menu-toggle{
+    transform: translateX(200px);
+    color: blue;
+}
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+.menu-close:hover {
+    color: rgb(245, 17, 17);
+}
+.menu-close i:hover{
+    color: #ef4b4b;
+}
+.fa-house{
+    margin-right: 10px;
+}
+.fa-cart-shopping{
+    margin-right: 10px;
+}
+.fa-share{
+    margin-right: 10px;
+}
+.fa-magnifying-glass{
+    margin-right: 10px;
+}
